@@ -1,0 +1,739 @@
+openapi: 3.1.0
+info:
+  license:
+    name: Proprietary
+    url: 'https://dynasend.com/docs-legacy/'
+  title: Dynasend API
+  description: |
+    # Introduction
+
+    Dynasend serves a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.
+
+    The base URLs for the Dynasend API are:
+
+    - Production: https://manage.dynasend.net/
+    - Sandbox: https://manage.dynasend.com/
+
+    #### Content-Type Header
+
+    ```
+    Content-Type: "application/json"
+    ```
+  termsOfService: 'https://dynasend.com/docs-legacy/'
+  contact:
+    name: Dynasend Support
+    email: support@digitechbranding.com
+    url: 'https://dynasend.com/contact/'
+  x-logo:
+    url: 'https://dynasend.com/assets/img/logo/logo.svg'
+    altText: Dynasend
+  version: '2022-08-01'
+servers:
+  - url: 'https://manage.dynasend.net'
+    description: API server
+  - url: 'https://manage.dynasend.com'
+    description: Sandbox API server
+paths:
+  /v1/signatures:
+    get:
+      operationId: SignaturesGetSignatures
+      summary: List all signatures
+      description: Oldest signatures will be first on the list.
+      parameters:
+        - name: limit
+          in: query
+          description: 'A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.'
+          required: false
+          schema:
+            type: integer
+          example: 20
+        - name: cursor
+          in: query
+          description: Pagination cursor
+          required: false
+          schema:
+            type: string
+          example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      title: Signature
+                      description: This object represents a signature of your account.
+                      type: object
+                      properties:
+                        id:
+                          description: Unique identifier for the Signature.
+                          type: string
+                          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+                          readOnly: true
+                        object:
+                          type: string
+                          enum:
+                            - signature
+                        data:
+                          description: |
+                            Signature properties.
+                          type:
+                            - object
+                            - 'null'
+                          example:
+                            first_name: John
+                            last_name: Doe
+                            title: CTO
+                          additionalProperties:
+                            maxLength: 500
+                            type:
+                              - string
+                              - 'null'
+                              - number
+                              - boolean
+                          properties: {}
+                        email:
+                          description: Signature's email.
+                          type: string
+                          example: someone@company.com
+                          readOnly: true
+                        program:
+                          description: |
+                            Program properties.
+                          type:
+                            - object
+                            - 'null'
+                          example:
+                            name: Default Program
+                          additionalProperties:
+                            maxLength: 500
+                            type:
+                              - string
+                              - 'null'
+                              - number
+                              - boolean
+                          properties: {}
+                        created_at:
+                          description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+                          type: string
+                          format: date-time
+                          example: '2022-02-11T23:19:22-03:00'
+                        updated_at:
+                          description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+                          type: string
+                          format: date-time
+                          example: '2022-02-11T23:19:22-03:00'
+                      additionalProperties: false
+                  links:
+                    description: Pagination links
+                    type: object
+                    properties:
+                      first:
+                        type:
+                          - 'null'
+                          - string
+                        example: 'https://manage.dynasend.net/v1/signatures'
+                      last:
+                        type:
+                          - 'null'
+                          - string
+                        example: 'https://manage.dynasend.net/v1/signatures'
+                      next:
+                        type:
+                          - 'null'
+                          - string
+                        example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                      prev:
+                        type:
+                          - 'null'
+                          - string
+                        example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                    title: Response Meta
+                  meta:
+                    description: Pagination metadata
+                    type: object
+                    properties:
+                      next_cursor:
+                        description: Next pagination cursor.
+                        type:
+                          - 'null'
+                          - string
+                        example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+                      path:
+                        type: string
+                        example: 'https://manage.dynasend.net/v1/signatures'
+                      per_page:
+                        type: number
+                        example: 25
+                      prev_cursor:
+                        description: Previous pagination cursor.
+                        type:
+                          - 'null'
+                          - string
+                        example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+                    title: Response Meta
+                required:
+                  - data
+              example:
+                data:
+                  - id: 46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8
+                    object: signature
+                    email: someone@company.com
+                    data:
+                      first_name: John
+                      last_name: Doe
+                      title: CTO
+                    program:
+                      name: Default Program
+                    created_at: '2021-07-05T12:24:32-03:00'
+                    updated_at: '2021-07-05T12:24:32-03:00'
+                links:
+                  first: null
+                  last: null
+                  next: 'https://manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8'
+                  prev: null
+                meta:
+                  next_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+                  path: 'https://manage.dynasend.net/v1/signatures'
+                  per_page: 25
+                  prev_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Unauthorized response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Unauthorized
+                    title: Unauthorized
+      tags:
+        - Signatures
+  '/v1/signatures/{id}':
+    get:
+      operationId: SignaturesGetSignature
+      summary: Retrieve a signature
+      description: Retrieve a signature.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: This object represents a signature of your account.
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        description: Unique identifier for the Signature.
+                        type: string
+                        example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+                        readOnly: true
+                      object:
+                        type: string
+                        enum:
+                          - signature
+                      data:
+                        description: |
+                          Signature properties.
+                        type:
+                          - object
+                          - 'null'
+                        example:
+                          first_name: John
+                          last_name: Doe
+                          title: CTO
+                        additionalProperties:
+                          maxLength: 500
+                          type:
+                            - string
+                            - 'null'
+                            - number
+                            - boolean
+                        properties: {}
+                      email:
+                        description: Signature's email.
+                        type: string
+                        example: someone@company.com
+                        readOnly: true
+                      program:
+                        description: |
+                          Program properties.
+                        type:
+                          - object
+                          - 'null'
+                        example:
+                          name: Default Program
+                        additionalProperties:
+                          maxLength: 500
+                          type:
+                            - string
+                            - 'null'
+                            - number
+                            - boolean
+                        properties: {}
+                      created_at:
+                        description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+                        type: string
+                        format: date-time
+                        example: '2022-02-11T23:19:22-03:00'
+                      updated_at:
+                        description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+                        type: string
+                        format: date-time
+                        example: '2022-02-11T23:19:22-03:00'
+                    title: Signature
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Unauthorized response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Unauthorized
+                    title: Unauthorized
+        '404':
+          description: Object not found
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Not Found response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Record not found
+                    title: Not Found
+      tags:
+        - Signatures
+  '/v1/signatures/render/{format}/{encoding}':
+    post:
+      operationId: SignaturesRenderSignatureByEmail
+      summary: Renders a signature by email
+      description: Renders a signature by email
+      parameters:
+        - name: format
+          in: path
+          description: 'One of: `html`, `html-reply`, `html-internal`, `html-salesforce`, `txt`, `txt-reply`, `txt-internal`'
+          required: true
+          schema:
+            type: string
+          example: html
+        - name: encoding
+          in: path
+          description: 'One of: `UTF-8`, `Windows-1252`, `UTF-16LE`'
+          required: false
+          schema:
+            type: string
+          example: UTF-8
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              email: someone@company.com
+            schema:
+              type: object
+              properties:
+                email:
+                  description: The signature's email address.
+                  type:
+                    - 'null'
+                    - string
+                  example: mail@example.com
+              additionalProperties: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: This object represents a rendered signature of your account.
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      content:
+                        description: Rendered signature content
+                        type: string
+                    title: Rendered Signature
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Unauthorized response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Unauthorized
+                    title: Unauthorized
+        '404':
+          description: Object not found
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Not Found response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Record not found
+                    title: Not Found
+      tags:
+        - Signatures
+  '/v1/signatures/{id}/render/{format}/{encoding}':
+    get:
+      operationId: SignaturesRenderSignature
+      summary: Renders a signature
+      description: Renders a signature
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+        - name: format
+          in: path
+          description: 'One of: `html`, `html-reply`, `html-internal`, `html-salesforce`, `txt`, `txt-reply`, `txt-internal`'
+          required: true
+          schema:
+            type: string
+          example: html
+        - name: encoding
+          in: path
+          description: 'One of: `UTF-8`, `Windows-1252`, `UTF-16LE`'
+          required: false
+          schema:
+            type: string
+          example: UTF-8
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: This object represents a rendered signature of your account.
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      content:
+                        description: Rendered signature content
+                        type: string
+                    title: Rendered Signature
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Unauthorized response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Unauthorized
+                    title: Unauthorized
+        '404':
+          description: Object not found
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    description: Not Found response
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Record not found
+                    title: Not Found
+      tags:
+        - Signatures
+components:
+  parameters:
+    cursor:
+      name: cursor
+      in: query
+      description: Pagination cursor
+      required: false
+      schema:
+        type: string
+      example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+    limit:
+      name: limit
+      in: query
+      description: 'A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.'
+      required: false
+      schema:
+        type: integer
+      example: 20
+  schemas:
+    '401':
+      description: Unauthorized response
+      type: object
+      properties:
+        message:
+          type: string
+          example: Unauthorized
+      title: Unauthorized
+    '404':
+      description: Not Found response
+      type: object
+      properties:
+        message:
+          type: string
+          example: Record not found
+      title: Not Found
+    Signature:
+      description: This object represents a signature of your account.
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the Signature.
+          type: string
+          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+          readOnly: true
+        object:
+          type: string
+          enum:
+            - signature
+        data:
+          description: |
+            Signature properties.
+          type:
+            - object
+            - 'null'
+          example:
+            first_name: John
+            last_name: Doe
+            title: CTO
+          additionalProperties:
+            maxLength: 500
+            type:
+              - string
+              - 'null'
+              - number
+              - boolean
+          properties: {}
+        email:
+          description: Signature's email.
+          type: string
+          example: someone@company.com
+          readOnly: true
+        program:
+          description: |
+            Program properties.
+          type:
+            - object
+            - 'null'
+          example:
+            name: Default Program
+          additionalProperties:
+            maxLength: 500
+            type:
+              - string
+              - 'null'
+              - number
+              - boolean
+          properties: {}
+        created_at:
+          description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+          type: string
+          format: date-time
+          example: '2022-02-11T23:19:22-03:00'
+        updated_at:
+          description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+          type: string
+          format: date-time
+          example: '2022-02-11T23:19:22-03:00'
+      additionalProperties: false
+      title: Signature
+    Links:
+      description: Pagination links
+      type: object
+      properties:
+        first:
+          type:
+            - 'null'
+            - string
+          example: 'https://manage.dynasend.net/v1/signatures'
+        last:
+          type:
+            - 'null'
+            - string
+          example: 'https://manage.dynasend.net/v1/signatures'
+        next:
+          type:
+            - 'null'
+            - string
+          example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+        prev:
+          type:
+            - 'null'
+            - string
+          example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+      title: Response Meta
+    Meta:
+      description: Pagination metadata
+      type: object
+      properties:
+        next_cursor:
+          description: Next pagination cursor.
+          type:
+            - 'null'
+            - string
+          example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+        path:
+          type: string
+          example: 'https://manage.dynasend.net/v1/signatures'
+        per_page:
+          type: number
+          example: 25
+        prev_cursor:
+          description: Previous pagination cursor.
+          type:
+            - 'null'
+            - string
+          example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
+      title: Response Meta
+    email:
+      description: The signature's email address.
+      type:
+        - 'null'
+        - string
+      example: mail@example.com
+    SignatureRender:
+      description: This object represents a rendered signature of your account.
+      type: object
+      properties:
+        content:
+          description: Rendered signature content
+          type: string
+      additionalProperties: false
+      title: Rendered Signature
+    signature:
+      description: This object represents a signature of your account.
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the Signature.
+          type: string
+          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+          readOnly: true
+        object:
+          type: string
+          enum:
+            - signature
+        data:
+          description: |
+            Signature properties.
+          type:
+            - object
+            - 'null'
+          example:
+            first_name: John
+            last_name: Doe
+            title: CTO
+          additionalProperties:
+            maxLength: 500
+            type:
+              - string
+              - 'null'
+              - number
+              - boolean
+          properties: {}
+        email:
+          description: Signature's email.
+          type: string
+          example: someone@company.com
+          readOnly: true
+        program:
+          description: |
+            Program properties.
+          type:
+            - object
+            - 'null'
+          example:
+            name: Default Program
+          additionalProperties:
+            maxLength: 500
+            type:
+              - string
+              - 'null'
+              - number
+              - boolean
+          properties: {}
+        created_at:
+          description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+          type: string
+          format: date-time
+          example: '2022-02-11T23:19:22-03:00'
+        updated_at:
+          description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
+          type: string
+          format: date-time
+          example: '2022-02-11T23:19:22-03:00'
+      additionalProperties: false
+      title: Signature
+  examples:
+    signature:
+      summary: Sample Signature
+      value:
+        id: CS3Z25Agp708
+        object: signature
+        email: someone@company.com
+        created_at: '2021-07-05T12:24:32-03:00'
+        updated_at: '2021-07-05T12:24:32-03:00'
+  securitySchemes:
+    SecretKeyAuthentication:
+      bearerFormat: auth-scheme
+      scheme: bearer
+      type: http
+      description: |
+        Authentication using the [secret key](#section/Authentication). You should send the [Secret API](#section/Authentication) key in the `Authorization` header using the [Bearer](https://tools.ietf.org/html/rfc6750#section-2.1) authentication scheme.
+tags:
+  - name: Signatures
+    description: |
+      This object represents a signature of your account.
+
+      <SchemaDefinition schemaRef="#/components/schemas/signature" exampleRef="#/components/examples/signature" showReadOnly={true} showWriteOnly={true} />
+externalDocs:
+  description: Dynasend Docs.
+  url: 'https://dynasend.com/docs/'
+security:
+  - SecretKeyAuthentication: []
