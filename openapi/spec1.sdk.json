@@ -6,7 +6,7 @@
       "url": "https://dynasend.com/docs-legacy/"
     },
     "title": "Dynasend API",
-    "description": "# Introduction\n\nDynasend serves a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\nThe base URLs for the Dynasend API are:\n\n- Production: https://manage.dynasend.net/\n- Sandbox: https://manage.dynasend.com/\n\n#### Content-Type Header\n\n```\nContent-Type: \"application/json\"\n```\n",
+    "description": "# Introduction\n\nDynasend serves a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\nThe base URLs for the Dynasend API are:\n\n- Production:\n  - US: https://us-east-2.manage.dynasend.net/\n  - EU: https://eu-west-1.manage.dynasend.net/\n- Sandbox:\n  - US: https://us-east-2.manage.dynasend.com/\n  - EU: https://eu-west-1.manage.dynasend.com/\n\n#### Content-Type Header\n\n```\nContent-Type: \"application/json\"\n```\n",
     "termsOfService": "https://dynasend.com/docs-legacy/",
     "contact": {
       "name": "Dynasend Support",
@@ -75,7 +75,7 @@
                           "id": {
                             "description": "Unique identifier for the Signature.",
                             "type": "string",
-                            "example": "9F6DD766-8454-4CAA-94C3-AAC21DD8FD73",
+                            "example": "sig_01grz8nvrgem73h57aa9sh8qpq",
                             "readOnly": true
                           },
                           "object": {
@@ -157,28 +157,28 @@
                             "null",
                             "string"
                           ],
-                          "example": "https://manage.dynasend.net/v1/signatures"
+                          "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
                         },
                         "last": {
                           "type": [
                             "null",
                             "string"
                           ],
-                          "example": "https://manage.dynasend.net/v1/signatures"
+                          "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
                         },
                         "next": {
                           "type": [
                             "null",
                             "string"
                           ],
-                          "example": "https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
+                          "example": "https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
                         },
                         "prev": {
                           "type": [
                             "null",
                             "string"
                           ],
-                          "example": "https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
+                          "example": "https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
                         }
                       },
                       "title": "Response Meta"
@@ -197,7 +197,7 @@
                         },
                         "path": {
                           "type": "string",
-                          "example": "https://manage.dynasend.net/v1/signatures"
+                          "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
                         },
                         "per_page": {
                           "type": "number",
@@ -222,7 +222,7 @@
                 "example": {
                   "data": [
                     {
-                      "id": "46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8",
+                      "id": "sig_01grz8nvrgem73h57aa9sh8qpq",
                       "object": "signature",
                       "email": "someone@company.com",
                       "data": {
@@ -240,12 +240,12 @@
                   "links": {
                     "first": null,
                     "last": null,
-                    "next": "https://manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8",
+                    "next": "https://us-east-2.manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8",
                     "prev": null
                   },
                   "meta": {
                     "next_cursor": "eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9",
-                    "path": "https://manage.dynasend.net/v1/signatures",
+                    "path": "https://us-east-2.manage.dynasend.net/v1/signatures",
                     "per_page": 25,
                     "prev_cursor": "eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
                   }
@@ -338,7 +338,7 @@
                         "id": {
                           "description": "Unique identifier for the Signature.",
                           "type": "string",
-                          "example": "9F6DD766-8454-4CAA-94C3-AAC21DD8FD73",
+                          "example": "sig_01grz8nvrgem73h57aa9sh8qpq",
                           "readOnly": true
                         },
                         "object": {
@@ -556,6 +556,7 @@
                       "properties": {
                         "content": {
                           "description": "Rendered signature content",
+                          "example": "John Doe, \n\nCompany Name\n, \n ,    ,  \ntel +1 456 456 XXXX\nmobile +1 456 456 XXXX\nfax +1 456 456 XXXX\njohndoe@company.com\nhttps://example.com\n\nThis email may contain confidential and/or private information. If you received this email in error please delete and notify sender.\n\n",
                           "type": "string"
                         }
                       },
@@ -692,6 +693,7 @@
                       "properties": {
                         "content": {
                           "description": "Rendered signature content",
+                          "example": "John Doe, \n\nCompany Name\n, \n ,    ,  \ntel +1 456 456 XXXX\nmobile +1 456 456 XXXX\nfax +1 456 456 XXXX\njohndoe@company.com\nhttps://example.com\n\nThis email may contain confidential and/or private information. If you received this email in error please delete and notify sender.\n\n",
                           "type": "string"
                         }
                       },
@@ -832,7 +834,7 @@
           "id": {
             "description": "Unique identifier for the Signature.",
             "type": "string",
-            "example": "9F6DD766-8454-4CAA-94C3-AAC21DD8FD73",
+            "example": "sig_01grz8nvrgem73h57aa9sh8qpq",
             "readOnly": true
           },
           "object": {
@@ -914,28 +916,28 @@
               "null",
               "string"
             ],
-            "example": "https://manage.dynasend.net/v1/signatures"
+            "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
           },
           "last": {
             "type": [
               "null",
               "string"
             ],
-            "example": "https://manage.dynasend.net/v1/signatures"
+            "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
           },
           "next": {
             "type": [
               "null",
               "string"
             ],
-            "example": "https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
+            "example": "https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
           },
           "prev": {
             "type": [
               "null",
               "string"
             ],
-            "example": "https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
+            "example": "https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9"
           }
         },
         "title": "Response Meta"
@@ -954,7 +956,7 @@
           },
           "path": {
             "type": "string",
-            "example": "https://manage.dynasend.net/v1/signatures"
+            "example": "https://us-east-2.manage.dynasend.net/v1/signatures"
           },
           "per_page": {
             "type": "number",
@@ -985,6 +987,7 @@
         "properties": {
           "content": {
             "description": "Rendered signature content",
+            "example": "John Doe, \n\nCompany Name\n, \n ,    ,  \ntel +1 456 456 XXXX\nmobile +1 456 456 XXXX\nfax +1 456 456 XXXX\njohndoe@company.com\nhttps://example.com\n\nThis email may contain confidential and/or private information. If you received this email in error please delete and notify sender.\n\n",
             "type": "string"
           }
         },
@@ -998,7 +1001,7 @@
           "id": {
             "description": "Unique identifier for the Signature.",
             "type": "string",
-            "example": "9F6DD766-8454-4CAA-94C3-AAC21DD8FD73",
+            "example": "sig_01grz8nvrgem73h57aa9sh8qpq",
             "readOnly": true
           },
           "object": {
@@ -1076,7 +1079,7 @@
       "signature": {
         "summary": "Sample Signature",
         "value": {
-          "id": "CS3Z25Agp708",
+          "id": "sig_01grz8nvrgem73h57aa9sh8qpq",
           "object": "signature",
           "email": "someone@company.com",
           "created_at": "2021-07-05T12:24:32-03:00",

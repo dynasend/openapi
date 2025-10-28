@@ -11,8 +11,12 @@ info:
 
     The base URLs for the Dynasend API are:
 
-    - Production: https://manage.dynasend.net/
-    - Sandbox: https://manage.dynasend.com/
+    - Production:
+      - US: https://us-east-2.manage.dynasend.net/
+      - EU: https://eu-west-1.manage.dynasend.net/
+    - Sandbox:
+      - US: https://us-east-2.manage.dynasend.com/
+      - EU: https://eu-west-1.manage.dynasend.com/
 
     #### Content-Type Header
 
@@ -72,7 +76,7 @@ paths:
                         id:
                           description: Unique identifier for the Signature.
                           type: string
-                          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+                          example: sig_01grz8nvrgem73h57aa9sh8qpq
                           readOnly: true
                         object:
                           type: string
@@ -136,22 +140,22 @@ paths:
                         type:
                           - 'null'
                           - string
-                        example: 'https://manage.dynasend.net/v1/signatures'
+                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
                       last:
                         type:
                           - 'null'
                           - string
-                        example: 'https://manage.dynasend.net/v1/signatures'
+                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
                       next:
                         type:
                           - 'null'
                           - string
-                        example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
                       prev:
                         type:
                           - 'null'
                           - string
-                        example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
                     title: Response Meta
                   meta:
                     description: Pagination metadata
@@ -165,7 +169,7 @@ paths:
                         example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
                       path:
                         type: string
-                        example: 'https://manage.dynasend.net/v1/signatures'
+                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
                       per_page:
                         type: number
                         example: 25
@@ -180,7 +184,7 @@ paths:
                   - data
               example:
                 data:
-                  - id: 46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8
+                  - id: sig_01grz8nvrgem73h57aa9sh8qpq
                     object: signature
                     email: someone@company.com
                     data:
@@ -194,11 +198,11 @@ paths:
                 links:
                   first: null
                   last: null
-                  next: 'https://manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8'
+                  next: 'https://us-east-2.manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8'
                   prev: null
                 meta:
                   next_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
-                  path: 'https://manage.dynasend.net/v1/signatures'
+                  path: 'https://us-east-2.manage.dynasend.net/v1/signatures'
                   per_page: 25
                   prev_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
         '401':
@@ -244,7 +248,7 @@ paths:
                       id:
                         description: Unique identifier for the Signature.
                         type: string
-                        example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+                        example: sig_01grz8nvrgem73h57aa9sh8qpq
                         readOnly: true
                       object:
                         type: string
@@ -380,6 +384,20 @@ paths:
                     properties:
                       content:
                         description: Rendered signature content
+                        example: |+
+                          John Doe, 
+
+                          Company Name
+                          , 
+                           ,    ,  
+                          tel +1 456 456 XXXX
+                          mobile +1 456 456 XXXX
+                          fax +1 456 456 XXXX
+                          johndoe@company.com
+                          https://example.com
+
+                          This email may contain confidential and/or private information. If you received this email in error please delete and notify sender.
+
                         type: string
                     title: Rendered Signature
         '401':
@@ -452,6 +470,20 @@ paths:
                     properties:
                       content:
                         description: Rendered signature content
+                        example: |+
+                          John Doe, 
+
+                          Company Name
+                          , 
+                           ,    ,  
+                          tel +1 456 456 XXXX
+                          mobile +1 456 456 XXXX
+                          fax +1 456 456 XXXX
+                          johndoe@company.com
+                          https://example.com
+
+                          This email may contain confidential and/or private information. If you received this email in error please delete and notify sender.
+
                         type: string
                     title: Rendered Signature
         '401':
@@ -526,7 +558,7 @@ components:
         id:
           description: Unique identifier for the Signature.
           type: string
-          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+          example: sig_01grz8nvrgem73h57aa9sh8qpq
           readOnly: true
         object:
           type: string
@@ -591,22 +623,22 @@ components:
           type:
             - 'null'
             - string
-          example: 'https://manage.dynasend.net/v1/signatures'
+          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
         last:
           type:
             - 'null'
             - string
-          example: 'https://manage.dynasend.net/v1/signatures'
+          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
         next:
           type:
             - 'null'
             - string
-          example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+          example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
         prev:
           type:
             - 'null'
             - string
-          example: 'https://manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+          example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
       title: Response Meta
     Meta:
       description: Pagination metadata
@@ -620,7 +652,7 @@ components:
           example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
         path:
           type: string
-          example: 'https://manage.dynasend.net/v1/signatures'
+          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
         per_page:
           type: number
           example: 25
@@ -643,6 +675,20 @@ components:
       properties:
         content:
           description: Rendered signature content
+          example: |+
+            John Doe, 
+
+            Company Name
+            , 
+             ,    ,  
+            tel +1 456 456 XXXX
+            mobile +1 456 456 XXXX
+            fax +1 456 456 XXXX
+            johndoe@company.com
+            https://example.com
+
+            This email may contain confidential and/or private information. If you received this email in error please delete and notify sender.
+
           type: string
       additionalProperties: false
       title: Rendered Signature
@@ -653,7 +699,7 @@ components:
         id:
           description: Unique identifier for the Signature.
           type: string
-          example: 9F6DD766-8454-4CAA-94C3-AAC21DD8FD73
+          example: sig_01grz8nvrgem73h57aa9sh8qpq
           readOnly: true
         object:
           type: string
@@ -714,7 +760,7 @@ components:
     signature:
       summary: Sample Signature
       value:
-        id: CS3Z25Agp708
+        id: sig_01grz8nvrgem73h57aa9sh8qpq
         object: signature
         email: someone@company.com
         created_at: '2021-07-05T12:24:32-03:00'

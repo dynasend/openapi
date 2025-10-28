@@ -1,7 +1,7 @@
 ---
 resources:
   signature:
-    id: CS3Z25Agp708
+    id: sig_01grz8nvrgem73h57aa9sh8qpq
     object: signature
     email: someone@company.com
     created_at: '2021-07-05T12:24:32-03:00'
