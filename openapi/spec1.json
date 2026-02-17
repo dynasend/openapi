@@ -3,30 +3,30 @@
   "info": {
     "license": {
       "name": "Proprietary",
-      "url": "https://dynasend.com/docs-legacy/"
+      "url": "https://dynasend.com/terms-and-conditions/"
     },
     "title": "Dynasend API",
     "description": "# Introduction\n\nDynasend serves a REST API. Our API has predictable resource-oriented URLs, accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs.\n\nThe base URLs for the Dynasend API are:\n\n- Production:\n  - US: https://us-east-2.manage.dynasend.net/\n  - EU: https://eu-west-1.manage.dynasend.net/\n- Sandbox:\n  - US: https://us-east-2.manage.dynasend.com/\n  - EU: https://eu-west-1.manage.dynasend.com/\n\n#### Content-Type Header\n\n```\nContent-Type: \"application/json\"\n```\n",
-    "termsOfService": "https://dynasend.com/docs-legacy/",
+    "termsOfService": "https://dynasend.com/terms-and-conditions/",
     "contact": {
       "name": "Dynasend Support",
       "email": "support@digitechbranding.com",
       "url": "https://dynasend.com/contact/"
     },
     "x-logo": {
-      "url": "https://dynasend.com/assets/img/logo/logo.svg",
+      "url": "https://docs.dynasend.com/img/logo.svg",
       "altText": "Dynasend"
     },
     "version": "2022-08-01"
   },
   "servers": [
     {
-      "url": "https://manage.dynasend.net",
-      "description": "API server"
+      "url": "https://us-east-1.manage.dynasend.net",
+      "description": "US API server"
     },
     {
-      "url": "https://manage.dynasend.com",
-      "description": "Sandbox API server"
+      "url": "https://eu-west-1.manage.dynasend.net",
+      "description": "EU API server"
     }
   ],
   "paths": {
@@ -1000,7 +1000,7 @@
   ],
   "externalDocs": {
     "description": "Dynasend Docs.",
-    "url": "https://dynasend.com/docs/"
+    "url": "https://docs.dynasend.com/"
   },
   "security": [
     {
