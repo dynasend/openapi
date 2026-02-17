@@ -33,7 +33,7 @@ info:
     altText: Dynasend
   version: '2022-08-01'
 servers:
-  - url: 'https://us-east-1.manage.dynasend.net'
+  - url: 'https://us-east-2.manage.dynasend.net'
     description: US API server
   - url: 'https://eu-west-1.manage.dynasend.net'
     description: EU API server
@@ -225,7 +225,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request GET \
-              --url 'https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE' \
+              --url 'https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE' \
               --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'
         - lang: Node + Request
           source: |
@@ -233,7 +233,7 @@ paths:
 
             const options = {
               method: 'GET',
-              url: 'https://us-east-1.manage.dynasend.net/v1/signatures',
+              url: 'https://us-east-2.manage.dynasend.net/v1/signatures',
               qs: {limit: 'SOME_INTEGER_VALUE', cursor: 'SOME_STRING_VALUE'},
               headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}
             };
@@ -248,7 +248,7 @@ paths:
             <?php
 
             $request = new HttpRequest();
-            $request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures');
+            $request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures');
             $request->setMethod(HTTP_METH_GET);
 
             $request->setQueryData([
@@ -271,7 +271,7 @@ paths:
           source: |-
             import requests
 
-            url = "https://us-east-1.manage.dynasend.net/v1/signatures"
+            url = "https://us-east-2.manage.dynasend.net/v1/signatures"
 
             querystring = {"limit":"SOME_INTEGER_VALUE","cursor":"SOME_STRING_VALUE"}
 
@@ -282,7 +282,7 @@ paths:
             print(response.text)
         - lang: Java + Unirest
           source: |-
-            HttpResponse<String> response = Unirest.get("https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE")
+            HttpResponse<String> response = Unirest.get("https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE")
               .header("Authorization", "Bearer REPLACE_BEARER_TOKEN")
               .asString();
         - lang: Ruby + Native
@@ -291,7 +291,7 @@ paths:
             require 'net/http'
             require 'openssl'
 
-            url = URI("https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE")
+            url = URI("https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE")
 
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true
@@ -419,7 +419,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request GET \
-              --url https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73 \
+              --url https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73 \
               --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'
         - lang: Node + Request
           source: |
@@ -427,7 +427,7 @@ paths:
 
             const options = {
               method: 'GET',
-              url: 'https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73',
+              url: 'https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73',
               headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}
             };
 
@@ -441,7 +441,7 @@ paths:
             <?php
 
             $request = new HttpRequest();
-            $request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73');
+            $request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73');
             $request->setMethod(HTTP_METH_GET);
 
             $request->setHeaders([
@@ -459,7 +459,7 @@ paths:
           source: |-
             import requests
 
-            url = "https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73"
+            url = "https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73"
 
             headers = {"Authorization": "Bearer REPLACE_BEARER_TOKEN"}
 
@@ -468,7 +468,7 @@ paths:
             print(response.text)
         - lang: Java + Unirest
           source: |-
-            HttpResponse<String> response = Unirest.get("https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73")
+            HttpResponse<String> response = Unirest.get("https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73")
               .header("Authorization", "Bearer REPLACE_BEARER_TOKEN")
               .asString();
         - lang: Ruby + Native
@@ -477,7 +477,7 @@ paths:
             require 'net/http'
             require 'openssl'
 
-            url = URI("https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73")
+            url = URI("https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73")
 
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true
@@ -588,7 +588,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request POST \
-              --url https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8 \
+              --url https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8 \
               --header 'Authorization: Bearer REPLACE_BEARER_TOKEN' \
               --header 'content-type: application/json' \
               --data '{"email":"mail@example.com"}'
@@ -598,7 +598,7 @@ paths:
 
             const options = {
               method: 'POST',
-              url: 'https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8',
+              url: 'https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8',
               headers: {
                 'content-type': 'application/json',
                 Authorization: 'Bearer REPLACE_BEARER_TOKEN'
@@ -617,7 +617,7 @@ paths:
             <?php
 
             $request = new HttpRequest();
-            $request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8');
+            $request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8');
             $request->setMethod(HTTP_METH_POST);
 
             $request->setHeaders([
@@ -638,7 +638,7 @@ paths:
           source: |-
             import requests
 
-            url = "https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8"
+            url = "https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8"
 
             payload = {"email": "mail@example.com"}
             headers = {
@@ -651,7 +651,7 @@ paths:
             print(response.text)
         - lang: Java + Unirest
           source: |-
-            HttpResponse<String> response = Unirest.post("https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8")
+            HttpResponse<String> response = Unirest.post("https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8")
               .header("content-type", "application/json")
               .header("Authorization", "Bearer REPLACE_BEARER_TOKEN")
               .body("{\"email\":\"mail@example.com\"}")
@@ -662,7 +662,7 @@ paths:
             require 'net/http'
             require 'openssl'
 
-            url = URI("https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8")
+            url = URI("https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8")
 
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true
@@ -765,7 +765,7 @@ paths:
         - lang: Shell + Curl
           source: |-
             curl --request GET \
-              --url https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8 \
+              --url https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8 \
               --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'
         - lang: Node + Request
           source: |
@@ -773,7 +773,7 @@ paths:
 
             const options = {
               method: 'GET',
-              url: 'https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8',
+              url: 'https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8',
               headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}
             };
 
@@ -787,7 +787,7 @@ paths:
             <?php
 
             $request = new HttpRequest();
-            $request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8');
+            $request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8');
             $request->setMethod(HTTP_METH_GET);
 
             $request->setHeaders([
@@ -805,7 +805,7 @@ paths:
           source: |-
             import requests
 
-            url = "https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8"
+            url = "https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8"
 
             headers = {"Authorization": "Bearer REPLACE_BEARER_TOKEN"}
 
@@ -814,7 +814,7 @@ paths:
             print(response.text)
         - lang: Java + Unirest
           source: |-
-            HttpResponse<String> response = Unirest.get("https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8")
+            HttpResponse<String> response = Unirest.get("https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8")
               .header("Authorization", "Bearer REPLACE_BEARER_TOKEN")
               .asString();
         - lang: Ruby + Native
@@ -823,7 +823,7 @@ paths:
             require 'net/http'
             require 'openssl'
 
-            url = URI("https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8")
+            url = URI("https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8")
 
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true

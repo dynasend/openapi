@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "https://us-east-1.manage.dynasend.net",
+      "url": "https://us-east-2.manage.dynasend.net",
       "description": "US API server"
     },
     {
@@ -282,27 +282,27 @@
         "x-codeSamples": [
           {
             "lang": "Shell + Curl",
-            "source": "curl --request GET \\\n  --url 'https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE' \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
+            "source": "curl --request GET \\\n  --url 'https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE' \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
           },
           {
             "lang": "Node + Request",
-            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-1.manage.dynasend.net/v1/signatures',\n  qs: {limit: 'SOME_INTEGER_VALUE', cursor: 'SOME_STRING_VALUE'},\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-2.manage.dynasend.net/v1/signatures',\n  qs: {limit: 'SOME_INTEGER_VALUE', cursor: 'SOME_STRING_VALUE'},\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
           },
           {
             "lang": "Php + Http1",
-            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setQueryData([\n  'limit' => 'SOME_INTEGER_VALUE',\n  'cursor' => 'SOME_STRING_VALUE'\n]);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
+            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setQueryData([\n  'limit' => 'SOME_INTEGER_VALUE',\n  'cursor' => 'SOME_STRING_VALUE'\n]);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
           },
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://us-east-1.manage.dynasend.net/v1/signatures\"\n\nquerystring = {\"limit\":\"SOME_INTEGER_VALUE\",\"cursor\":\"SOME_STRING_VALUE\"}\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers, params=querystring)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://us-east-2.manage.dynasend.net/v1/signatures\"\n\nquerystring = {\"limit\":\"SOME_INTEGER_VALUE\",\"cursor\":\"SOME_STRING_VALUE\"}\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers, params=querystring)\n\nprint(response.text)"
           },
           {
             "lang": "Java + Unirest",
-            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
+            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
           },
           {
             "lang": "Ruby + Native",
-            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-1.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
+            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-2.manage.dynasend.net/v1/signatures?limit=SOME_INTEGER_VALUE&cursor=SOME_STRING_VALUE\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
           }
         ]
       }
@@ -466,27 +466,27 @@
         "x-codeSamples": [
           {
             "lang": "Shell + Curl",
-            "source": "curl --request GET \\\n  --url https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
+            "source": "curl --request GET \\\n  --url https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
           },
           {
             "lang": "Node + Request",
-            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73',\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73',\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
           },
           {
             "lang": "Php + Http1",
-            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
+            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
           },
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\"\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\"\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Java + Unirest",
-            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
+            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
           },
           {
             "lang": "Ruby + Native",
-            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
+            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
           }
         ]
       }
@@ -618,27 +618,27 @@
         "x-codeSamples": [
           {
             "lang": "Shell + Curl",
-            "source": "curl --request POST \\\n  --url https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN' \\\n  --header 'content-type: application/json' \\\n  --data '{\"email\":\"mail@example.com\"}'"
+            "source": "curl --request POST \\\n  --url https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN' \\\n  --header 'content-type: application/json' \\\n  --data '{\"email\":\"mail@example.com\"}'"
           },
           {
             "lang": "Node + Request",
-            "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8',\n  headers: {\n    'content-type': 'application/json',\n    Authorization: 'Bearer REPLACE_BEARER_TOKEN'\n  },\n  body: {email: 'mail@example.com'},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+            "source": "const request = require('request');\n\nconst options = {\n  method: 'POST',\n  url: 'https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8',\n  headers: {\n    'content-type': 'application/json',\n    Authorization: 'Bearer REPLACE_BEARER_TOKEN'\n  },\n  body: {email: 'mail@example.com'},\n  json: true\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
           },
           {
             "lang": "Php + Http1",
-            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8');\n$request->setMethod(HTTP_METH_POST);\n\n$request->setHeaders([\n  'content-type' => 'application/json',\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\n$request->setBody('{\"email\":\"mail@example.com\"}');\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
+            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8');\n$request->setMethod(HTTP_METH_POST);\n\n$request->setHeaders([\n  'content-type' => 'application/json',\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\n$request->setBody('{\"email\":\"mail@example.com\"}');\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
           },
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8\"\n\npayload = {\"email\": \"mail@example.com\"}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8\"\n\npayload = {\"email\": \"mail@example.com\"}\nheaders = {\n    \"content-type\": \"application/json\",\n    \"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"\n}\n\nresponse = requests.request(\"POST\", url, json=payload, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Java + Unirest",
-            "source": "HttpResponse<String> response = Unirest.post(\"https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8\")\n  .header(\"content-type\", \"application/json\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .body(\"{\\\"email\\\":\\\"mail@example.com\\\"}\")\n  .asString();"
+            "source": "HttpResponse<String> response = Unirest.post(\"https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8\")\n  .header(\"content-type\", \"application/json\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .body(\"{\\\"email\\\":\\\"mail@example.com\\\"}\")\n  .asString();"
           },
           {
             "lang": "Ruby + Native",
-            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-1.manage.dynasend.net/v1/signatures/render/html/UTF-8\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"content-type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\nrequest.body = \"{\\\"email\\\":\\\"mail@example.com\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body"
+            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-2.manage.dynasend.net/v1/signatures/render/html/UTF-8\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Post.new(url)\nrequest[\"content-type\"] = 'application/json'\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\nrequest.body = \"{\\\"email\\\":\\\"mail@example.com\\\"}\"\n\nresponse = http.request(request)\nputs response.read_body"
           }
         ]
       }
@@ -755,27 +755,27 @@
         "x-codeSamples": [
           {
             "lang": "Shell + Curl",
-            "source": "curl --request GET \\\n  --url https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
+            "source": "curl --request GET \\\n  --url https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8 \\\n  --header 'Authorization: Bearer REPLACE_BEARER_TOKEN'"
           },
           {
             "lang": "Node + Request",
-            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8',\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
+            "source": "const request = require('request');\n\nconst options = {\n  method: 'GET',\n  url: 'https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8',\n  headers: {Authorization: 'Bearer REPLACE_BEARER_TOKEN'}\n};\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});\n"
           },
           {
             "lang": "Php + Http1",
-            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
+            "source": "<?php\n\n$request = new HttpRequest();\n$request->setUrl('https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8');\n$request->setMethod(HTTP_METH_GET);\n\n$request->setHeaders([\n  'Authorization' => 'Bearer REPLACE_BEARER_TOKEN'\n]);\n\ntry {\n  $response = $request->send();\n\n  echo $response->getBody();\n} catch (HttpException $ex) {\n  echo $ex;\n}"
           },
           {
             "lang": "Python + Requests",
-            "source": "import requests\n\nurl = \"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\"\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
+            "source": "import requests\n\nurl = \"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\"\n\nheaders = {\"Authorization\": \"Bearer REPLACE_BEARER_TOKEN\"}\n\nresponse = requests.request(\"GET\", url, headers=headers)\n\nprint(response.text)"
           },
           {
             "lang": "Java + Unirest",
-            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
+            "source": "HttpResponse<String> response = Unirest.get(\"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\")\n  .header(\"Authorization\", \"Bearer REPLACE_BEARER_TOKEN\")\n  .asString();"
           },
           {
             "lang": "Ruby + Native",
-            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-1.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
+            "source": "require 'uri'\nrequire 'net/http'\nrequire 'openssl'\n\nurl = URI(\"https://us-east-2.manage.dynasend.net/v1/signatures/9F6DD766-8454-4CAA-94C3-AAC21DD8FD73/render/html/UTF-8\")\n\nhttp = Net::HTTP.new(url.host, url.port)\nhttp.use_ssl = true\nhttp.verify_mode = OpenSSL::SSL::VERIFY_NONE\n\nrequest = Net::HTTP::Get.new(url)\nrequest[\"Authorization\"] = 'Bearer REPLACE_BEARER_TOKEN'\n\nresponse = http.request(request)\nputs response.read_body"
           }
         ]
       }

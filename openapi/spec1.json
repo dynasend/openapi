@@ -21,7 +21,7 @@
   },
   "servers": [
     {
-      "url": "https://us-east-1.manage.dynasend.net",
+      "url": "https://us-east-2.manage.dynasend.net",
       "description": "US API server"
     },
     {
