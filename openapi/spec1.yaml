@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   license:
     name: Proprietary
-    url: 'https://dynasend.com/terms-and-conditions/'
+    url: https://dynasend.com/terms-and-conditions/
   title: Dynasend API
   description: |
     # Introduction
@@ -23,19 +23,19 @@ info:
     ```
     Content-Type: "application/json"
     ```
-  termsOfService: 'https://dynasend.com/terms-and-conditions/'
+  termsOfService: https://dynasend.com/terms-and-conditions/
   contact:
     name: Dynasend Support
     email: support@digitechbranding.com
-    url: 'https://dynasend.com/contact/'
+    url: https://dynasend.com/contact/
   x-logo:
-    url: 'https://docs.dynasend.com/img/logo.svg'
+    url: https://docs.dynasend.com/img/logo.svg
     altText: Dynasend
-  version: '2022-08-01'
+  version: 2022-08-01
 servers:
-  - url: 'https://us-east-2.manage.dynasend.net'
+  - url: https://us-east-2.manage.dynasend.net
     description: US API server
-  - url: 'https://eu-west-1.manage.dynasend.net'
+  - url: https://eu-west-1.manage.dynasend.net
     description: EU API server
 paths:
   /v1/signatures:
@@ -46,7 +46,7 @@ paths:
       parameters:
         - name: limit
           in: query
-          description: 'A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.'
+          description: A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.
           required: false
           schema:
             type: integer
@@ -125,12 +125,12 @@ paths:
                           description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
                           type: string
                           format: date-time
-                          example: '2022-02-11T23:19:22-03:00'
+                          example: 2022-02-11T23:19:22-03:00
                         updated_at:
                           description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
                           type: string
                           format: date-time
-                          example: '2022-02-11T23:19:22-03:00'
+                          example: 2022-02-11T23:19:22-03:00
                       additionalProperties: false
                   links:
                     description: Pagination links
@@ -140,22 +140,22 @@ paths:
                         type:
                           - 'null'
                           - string
-                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+                        example: https://us-east-2.manage.dynasend.net/v1/signatures
                       last:
                         type:
                           - 'null'
                           - string
-                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+                        example: https://us-east-2.manage.dynasend.net/v1/signatures
                       next:
                         type:
                           - 'null'
                           - string
-                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                        example: https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
                       prev:
                         type:
                           - 'null'
                           - string
-                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+                        example: https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
                     title: Response Meta
                   meta:
                     description: Pagination metadata
@@ -169,7 +169,7 @@ paths:
                         example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
                       path:
                         type: string
-                        example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+                        example: https://us-east-2.manage.dynasend.net/v1/signatures
                       per_page:
                         type: number
                         example: 25
@@ -193,16 +193,16 @@ paths:
                       title: CTO
                     program:
                       name: Default Program
-                    created_at: '2021-07-05T12:24:32-03:00'
-                    updated_at: '2021-07-05T12:24:32-03:00'
+                    created_at: 2021-07-05T12:24:32-03:00
+                    updated_at: 2021-07-05T12:24:32-03:00
                 links:
                   first: null
                   last: null
-                  next: 'https://us-east-2.manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8'
+                  next: https://us-east-2.manage.dynasend.net/v1/signatures?starting_after=46E9A0A7-75F7-482D-8BCC-FE94E93EB7B8
                   prev: null
                 meta:
                   next_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
-                  path: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+                  path: https://us-east-2.manage.dynasend.net/v1/signatures
                   per_page: 25
                   prev_cursor: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
         '401':
@@ -221,7 +221,7 @@ paths:
                     title: Unauthorized
       tags:
         - Signatures
-  '/v1/signatures/{id}':
+  /v1/signatures/{id}:
     get:
       operationId: SignaturesGetSignature
       summary: Retrieve a signature
@@ -297,12 +297,12 @@ paths:
                         description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
                         type: string
                         format: date-time
-                        example: '2022-02-11T23:19:22-03:00'
+                        example: 2022-02-11T23:19:22-03:00
                       updated_at:
                         description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
                         type: string
                         format: date-time
-                        example: '2022-02-11T23:19:22-03:00'
+                        example: 2022-02-11T23:19:22-03:00
                     title: Signature
         '401':
           description: Unauthorized
@@ -334,7 +334,7 @@ paths:
                     title: Not Found
       tags:
         - Signatures
-  '/v1/signatures/render/{format}/{encoding}':
+  /v1/signatures/render/{format}/{encoding}:
     post:
       operationId: SignaturesRenderSignatureByEmail
       summary: Renders a signature by email
@@ -430,7 +430,7 @@ paths:
                     title: Not Found
       tags:
         - Signatures
-  '/v1/signatures/{id}/render/{format}/{encoding}':
+  /v1/signatures/{id}/render/{format}/{encoding}:
     get:
       operationId: SignaturesRenderSignature
       summary: Renders a signature
@@ -529,7 +529,7 @@ components:
     limit:
       name: limit
       in: query
-      description: 'A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.'
+      description: A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 25.
       required: false
       schema:
         type: integer
@@ -607,12 +607,12 @@ components:
           description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
           type: string
           format: date-time
-          example: '2022-02-11T23:19:22-03:00'
+          example: 2022-02-11T23:19:22-03:00
         updated_at:
           description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
           type: string
           format: date-time
-          example: '2022-02-11T23:19:22-03:00'
+          example: 2022-02-11T23:19:22-03:00
       additionalProperties: false
       title: Signature
     Links:
@@ -623,22 +623,22 @@ components:
           type:
             - 'null'
             - string
-          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+          example: https://us-east-2.manage.dynasend.net/v1/signatures
         last:
           type:
             - 'null'
             - string
-          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+          example: https://us-east-2.manage.dynasend.net/v1/signatures
         next:
           type:
             - 'null'
             - string
-          example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+          example: https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
         prev:
           type:
             - 'null'
             - string
-          example: 'https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9'
+          example: https://us-east-2.manage.dynasend.net/v1/signatures?cursor=eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
       title: Response Meta
     Meta:
       description: Pagination metadata
@@ -652,7 +652,7 @@ components:
           example: eyJzaWduYXR1cmVzLmlkIjoxMjUwLCJfcG9pbnRzVG9OZXh0SXRlbXMiOnRydWV9
         path:
           type: string
-          example: 'https://us-east-2.manage.dynasend.net/v1/signatures'
+          example: https://us-east-2.manage.dynasend.net/v1/signatures
         per_page:
           type: number
           example: 25
@@ -748,12 +748,12 @@ components:
           description: 'Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
           type: string
           format: date-time
-          example: '2022-02-11T23:19:22-03:00'
+          example: 2022-02-11T23:19:22-03:00
         updated_at:
           description: 'Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.'
           type: string
           format: date-time
-          example: '2022-02-11T23:19:22-03:00'
+          example: 2022-02-11T23:19:22-03:00
       additionalProperties: false
       title: Signature
   examples:
@@ -763,8 +763,8 @@ components:
         id: sig_01grz8nvrgem73h57aa9sh8qpq
         object: signature
         email: someone@company.com
-        created_at: '2021-07-05T12:24:32-03:00'
-        updated_at: '2021-07-05T12:24:32-03:00'
+        created_at: 2021-07-05T12:24:32-03:00
+        updated_at: 2021-07-05T12:24:32-03:00
   securitySchemes:
     SecretKeyAuthentication:
       bearerFormat: auth-scheme
@@ -780,6 +780,6 @@ tags:
       <SchemaDefinition schemaRef="#/components/schemas/signature" exampleRef="#/components/examples/signature" showReadOnly={true} showWriteOnly={true} />
 externalDocs:
   description: Dynasend Docs.
-  url: 'https://docs.dynasend.com/'
+  url: https://docs.dynasend.com/
 security:
   - SecretKeyAuthentication: []
