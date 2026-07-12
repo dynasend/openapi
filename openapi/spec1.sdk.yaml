@@ -11,12 +11,8 @@ info:
 
     The base URLs for the Dynasend API are:
 
-    - Production:
-      - US: https://us-east-2.manage.dynasend.net/
-      - EU: https://eu-west-1.manage.dynasend.net/
-    - Sandbox:
-      - US: https://us-east-2.manage.dynasend.com/
-      - EU: https://eu-west-1.manage.dynasend.com/
+    - US: https://us-east-2.manage.dynasend.net/
+    - EU: https://eu-west-1.manage.dynasend.net/
 
     #### Content-Type Header
 
