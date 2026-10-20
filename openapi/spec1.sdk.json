@@ -133,13 +133,13 @@
                             "properties": {}
                           },
                           "created_at": {
-                            "description": "Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
+                            "description": "Time at which the object was created. Formatting follows [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
                             "type": "string",
                             "format": "date-time",
                             "example": "2022-02-11T23:19:22-03:00"
                           },
                           "updated_at": {
-                            "description": "Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
+                            "description": "Time at which the object was last updated. Formatting follows [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
                             "type": "string",
                             "format": "date-time",
                             "example": "2022-02-11T23:19:22-03:00"
@@ -396,13 +396,13 @@
                           "properties": {}
                         },
                         "created_at": {
-                          "description": "Time at which the object was created. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
+                          "description": "Time at which the object was created. Formatting follows [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
                           "type": "string",
                           "format": "date-time",
                           "example": "2022-02-11T23:19:22-03:00"
                         },
                         "updated_at": {
-                          "description": "Time at which the object was last updated. Formatting follows [RFC339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
+                          "description": "Time at which the object was last updated. Formatting follows [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339#section-5.8). Example: `2015-10-21T08:29:31-03:00`.",
                           "type": "string",
                           "format": "date-time",
                           "example": "2022-02-11T23:19:22-03:00"
